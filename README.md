@@ -22,8 +22,10 @@ redux, typescript, navigation을 사용한 react-native example
 1. typescript & redux 설치
 > - [typescript로inti](https://facebook.github.io/react-native/docs/typescript)
 > - yarn add redux react-redux @types/react-redux
-
-2. [reactNavigation 설치](https://reactnavigation.org/docs/en/getting-started.html)
+2. [redux-persist 설치](https://github.com/rt2zz/redux-persist)
+> - npm install redux-persist
+> - yarn add @react-native-community/async-storage
+3. [reactNavigation 설치](https://reactnavigation.org/docs/en/getting-started.html)
 
 ### 참고문서
 - [typescript & redux 블로그](https://velog.io/@velopert/use-typescript-and-redux-like-a-pro#usetodos)
