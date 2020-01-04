@@ -6,10 +6,7 @@ const INCREASE_BY = 'counter/INCREASE_BY' as const;
 //액션 생성 함수 선언
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
-export const increaseBy = (diff: number) => ({
-    type: INCREASE_BY,
-    payload: diff
-});
+export const increaseBy = (diff: number) => ({ type: INCREASE_BY, payload: diff });
 
 //리듀서 type 지정
 type CounterAction =
@@ -26,7 +23,7 @@ const initialState: CounterState = {
 };
 
 //리듀서
-function counter(state: CounterState = initialState, action: CounterAction) {
+function counter(state: CounterState = initialState, action: CounterAction): CounterState {
     switch (action.type) {
         case INCREASE:
             return { count: state.count + 1 };

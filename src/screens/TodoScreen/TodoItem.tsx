@@ -5,13 +5,8 @@ import useTodo from '../../hooks/useTodo';
 
 const WIDTH = Dimensions.get('window').width;
 
-const defaultProps: TodoList = {
-    text: '',
-    id: 1,
-    isLine: false,
-}
 
-function TodoItem(props: TodoList = defaultProps) {
+function TodoItem(props: TodoList) {
 
     const { onRemove, onSetline } = useTodo()
 

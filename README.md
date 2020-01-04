@@ -11,10 +11,11 @@ redux, typescript, navigation을 사용한 react-native example
 ├── hooks
 ├── modules
 |   └── index.ts
-└── screens
-    └── ExamScreen
-        └── index.tsx
-    └── index.tsx
+├── screens
+|   └── ExamScreen
+|       └── index.tsx
+|   └── index.tsx
+
 ```
 
 ### 설치 순서
@@ -28,3 +29,5 @@ redux, typescript, navigation을 사용한 react-native example
 ### 참고문서
 - [typescript & redux 블로그](https://velog.io/@velopert/use-typescript-and-redux-like-a-pro#usetodos)
 
+### 추가기능
+- ~~로컬스토리지~~ [퍼시스트](https://medium.com/humanscape-tech/redux-persist-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0-2077c9e566d9)

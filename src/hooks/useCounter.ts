@@ -9,10 +9,7 @@ export default function useCounter() {
 
     const onIncrease = useCallback(() => dispatch(increase()), [dispatch]);
     const onDecrease = useCallback(() => dispatch(decrease()), [dispatch]);
-    const onIncreaseBy = useCallback(
-        (diff: number) => dispatch(increaseBy(diff)),
-        [dispatch]
-    );
+    const onIncreaseBy = useCallback((diff: number) => dispatch(increaseBy(diff)), [dispatch]);
 
     return {
         count,

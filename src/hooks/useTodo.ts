@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { remove, setline, append } from '../modules/Todo';
 
 export default function useTodo() {
-    const list = useSelector((state: RootState) => state.Todo);
+    const list = useSelector((state: RootState) => state.Todo.list);
     const dispatch = useDispatch();
 
     const onRemove = useCallback((id: number) => dispatch(remove(id)), [dispatch]);

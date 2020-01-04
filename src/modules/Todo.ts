@@ -1,5 +1,3 @@
-
-import { AsyncStorage } from 'react-native'
 //액션 type 선언
 const REMOVE = 'todo/REMOVE' as const;
 const SETLINE = 'todo/SETLINE' as const;
@@ -22,20 +20,24 @@ export type TodoList = {
     id: number;
 }
 
-type TodoState = TodoList[];
+type TodoState = {
+    list: TodoList[];
+}
 
-const initialState: TodoState = [];
+const initialState: TodoState = {
+    list: []
+};
 
 //리듀서
-function todo(state: TodoState = initialState, action: TodoAction) {
+function todo(state: TodoState = initialState, action: TodoAction): TodoState {
     switch (action.type) {
         case REMOVE:
-            return state.filter(val => val.id !== action.id)
+            return { ...state, list: state.list.filter(val => val.id !== action.id) }
         case SETLINE:
-            return state.map(val => val.id === action.id ? { ...val, isLine: !val.isLine } : val)
+            return { ...state, list: state.list.map(val => val.id === action.id ? { ...val, isLine: !val.isLine } : val) }
         case APPEND:
-            const id = Math.max(...state.map(val => val.id));
-            return state.concat({ text: action.text, isLine: false, id: id === -Infinity ? 0 : id + 1 })
+            const id = Math.max(...state.list.map(val => val.id));
+            return { ...state, list: state.list.concat({ text: action.text, isLine: false, id: id === -Infinity ? 0 : id + 1 }) }
         default:
             return state;
     }
