@@ -1,31 +1,20 @@
-import React, { Component } from 'react';
-import {
-    View,
-    Text,
-    TextInput
-} from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native'
+import useHomeScreen from '../../hooks/useHomeScreen';
 
-interface IProps {
 
-}
-
-interface IState {
-    text: string
-}
-
-export default class HomeScreen extends Component<IProps, IState>{
-    constructor(props: IProps) {
-        super(props);
-        this.state = {
-            text: "100"
-        }
-    }
-
-    render() {
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>{this.state.text}</Text>
+function HomeScreen() {
+    const { count, onIncrease, onDecrease, onIncreaseBy } = useHomeScreen();
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 50, borderColor: '#000', borderWidth: 1, padding: 20 }}>{count}</Text>
+            <View style={{ borderColor: '#000', borderWidth: 1, padding: 20, flexDirection: 'row', width: 200, alignItems: 'center', justifyContent: 'space-between' }}>
+                <Text style={{ fontSize: 30 }} onPress={onIncrease}>+1</Text>
+                <Text style={{ fontSize: 30 }} onPress={onDecrease}>-1</Text>
+                <Text style={{ fontSize: 30 }} onPress={() => onIncreaseBy(5)}>+5</Text>
             </View>
-        )
-    }
+        </View>
+    );
 }
+
+export default HomeScreen;
