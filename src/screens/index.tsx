@@ -1,17 +1,38 @@
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
+
 
 import HomeScreen from './HomeScreen';
+import TodoScreen from './TodoScreen';
+
+const TabBarComponent = (props: any) => <BottomTabBar {...props} />;
+
+const TabBar = createBottomTabNavigator(
+    {
+        HomeScreen,
+        TodoScreen
+    },
+    {
+        tabBarComponent: props => (
+            <TabBarComponent {...props} style={{ borderTopColor: 'red' }} />
+        ),
+        defaultNavigationOptions: ({ navigation }) => ({
+            title: navigation.state.routeName,
+        }),
+    }
+);
 
 const RootStack = createStackNavigator(
     {
-        HomeScreen
+        TabBar
     },
     {
-        defaultNavigationOptions: ({ navigation }) => ({
-            title: 'Home',
-        }),
-        initialRouteName: 'HomeScreen'
+        defaultNavigationOptions: {
+            headerShown: false
+        },
+        initialRouteName: 'TabBar'
     }
 );
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native'
-import useHomeScreen from '../../hooks/useHomeScreen';
+import useCounter from '../../hooks/useCounter';
 
 
 function HomeScreen() {
-    const { count, onIncrease, onDecrease, onIncreaseBy } = useHomeScreen();
+    const { count, onIncrease, onDecrease, onIncreaseBy } = useCounter();
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ fontSize: 50, borderColor: '#000', borderWidth: 1, padding: 20 }}>{count}</Text>

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import HomeScreen from './HomeScreen';
+import Counter from './Counter';
+import Todo from './Todo';
 
 const rootReducer = combineReducers({
-    HomeScreen
+    Counter,
+    Todo
 });
 
 export default rootReducer;

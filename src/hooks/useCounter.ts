@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../modules';
-import { increase, decrease, increaseBy } from '../modules/HomeScreen';
+import { increase, decrease, increaseBy } from '../modules/Counter';
 import { useCallback } from 'react';
 
 export default function useCounter() {
-    const count = useSelector((state: RootState) => state.HomeScreen.count);
+    const count = useSelector((state: RootState) => state.Counter.count);
     const dispatch = useDispatch();
 
     const onIncrease = useCallback(() => dispatch(increase()), [dispatch]);
