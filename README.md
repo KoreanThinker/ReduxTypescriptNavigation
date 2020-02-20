@@ -20,7 +20,7 @@ redux, typescript, navigation을 사용한 react-native example
 
 ### 설치 순서
 1. typescript & redux 설치
-> - [typescript로inti](https://facebook.github.io/react-native/docs/typescript)
+> - [typescript로inti](https://facebook.github.io/react-native/docs/typescript) - ```npx react-native init MyApp --template react-native-template-typescript```
 > - yarn add redux react-redux @types/react-redux
 2. [redux-persist 설치](https://github.com/rt2zz/redux-persist)
 > - npm install redux-persist
